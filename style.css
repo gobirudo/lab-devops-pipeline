@@ -201,3 +201,12 @@ footer {
     font-size: 0.9rem;
     margin-top: 40px;
 }
+
+.product-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #334155;
+}
