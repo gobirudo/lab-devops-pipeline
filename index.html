@@ -1,8 +1,166 @@
 <!DOCTYPE html>
-<html>
-<head><title>Lab DevOps</title></head>
-<body style="font-family: Arial; text-align: center; margin-top: 50px; background: #1e1e2f; color: #fff;">
-    <h1>Deploy Automatizado - Versao 1.0</h1>
-    <p>Servidor SRV-003 rodando via Jenkins + Docker + Nginx</p>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NetCore Infra & Cloud Solutions | Hardware e Consultoria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="devops-banner">
+        🚀 AMBIENTE DE PRODUÇÃO v1.0 | Deploy Automatizado via Jenkins + Docker + Nginx (SRV-003)
+    </div>
+
+    <header>
+        <div class="logo">NetCore<span>Tech</span></div>
+        <nav>
+            <a href="#hardware">Hardware & Redes</a>
+            <a href="#consultoria">Consultoria Cloud & Sec</a>
+        </nav>
+        <div class="cart-badge" onclick="verCarrinho()">
+            🛒 Orçamento (<span id="cart-count">0</span>)
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Infraestrutura Crítica, Segurança e Cloud Corporativa</h1>
+        <p>Fornecimento de equipamentos enterprise e consultoria especializada em Firewalls, Servidores, Microsoft 365, Backup e Monitoramento NOC.</p>
+        <a href="#hardware" class="btn-primary">Explorar Soluções</a>
+    </section>
+
+    <section id="hardware" class="container">
+        <h2 class="section-title">Dispositivos de Rede & Segurança Perimetral</h2>
+        <p class="section-subtitle">Equipamentos homologados para alta disponibilidade, VPN Site-to-Site e proteção de borda.</p>
+        
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <span class="tag">Firewall NGFW</span>
+                    <h3>Appliance Firewall FortiGate 60F</h3>
+                    <p>Proteção UTM completa, IPS, Web Filtering, SD-WAN integrada e VPN IPSec/SSL de alta performance.</p>
+                </div>
+                <div>
+                    <div class="price">R$ 6.890,00</div>
+                    <button class="btn-buy" onclick="adicionarItem('Firewall FortiGate 60F', 6890)">+ Adicionar ao Orçamento</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="tag">Switching L2/L3</span>
+                    <h3>Switch Gerenciável Huawei S5720 28P</h3>
+                    <p>24 portas Gigabit + 4 uplinks SFP, suporte avançado a VLANs, QoS, SNMP e roteamento estático.</p>
+                </div>
+                <div>
+                    <div class="price">R$ 4.450,00</div>
+                    <button class="btn-buy" onclick="adicionarItem('Switch Huawei S5720', 4450)">+ Adicionar ao Orçamento</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="tag">Servidor Rack</span>
+                    <h3>Servidor Dell PowerEdge R450</h3>
+                    <p>Processador Intel Xeon Silver, 64GB RAM ECC, RAID hardware e fontes redundantes para virtualização.</p>
+                </div>
+                <div>
+                    <div class="price">R$ 18.900,00</div>
+                    <button class="btn-buy" onclick="adicionarItem('Servidor Dell PowerEdge R450', 18900)">+ Adicionar ao Orçamento</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="tag">Storage & Backup</span>
+                    <h3>NAS Rackmount 4-Bay Enterprise</h3>
+                    <p>Armazenamento redundante para retenção de backups locais, snapshots imutáveis e replicação em nuvem.</p>
+                </div>
+                <div>
+                    <div class="price">R$ 5.200,00</div>
+                    <button class="btn-buy" onclick="adicionarItem('NAS Rackmount 4-Bay', 5200)">+ Adicionar ao Orçamento</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="consultoria" class="container">
+        <h2 class="section-title">Consultoria Especializada & Projetos</h2>
+        <p class="section-subtitle">Implementação, migração e sustentação com foco em governança, continuidade e segurança.</p>
+
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <span class="tag">Cloud & Identidade</span>
+                    <h3>Implantação & Governança Microsoft 365</h3>
+                    <p>Configuração de Entra ID, Acesso Condicional, MFA, Exchange Online, SharePoint e políticas DLP.</p>
+                </div>
+                <div>
+                    <div class="price">R$ 3.500,00</div>
+                    <button class="btn-buy" onclick="adicionarItem('Consultoria M365 & Entra ID', 3500)">+ Adicionar ao Orçamento</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="tag">Continuidade</span>
+                    <h3>Arquitetura de Backup & Disaster Recovery</h3>
+                    <p>Política 3-2-1, testes automatizados de restore, proteção anti-ransomware e backup híbrido Azure.</p>
+                </div>
+                <div>
+                    <div class="price">R$ 2.800,00</div>
+                    <button class="btn-buy" onclick="adicionarItem('Projeto Backup & DR', 2800)">+ Adicionar ao Orçamento</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="tag">Observabilidade</span>
+                    <h3>Implantação NOC Zabbix + Grafana</h3>
+                    <p>Monitoramento proativo de links WAN, switches, servidores, eliminação de falsos alertas e dashboards.</p>
+                </div>
+                <div>
+                    <div class="price">R$ 2.400,00</div>
+                    <button class="btn-buy" onclick="adicionarItem('Implantação Zabbix + Grafana', 2400)">+ Adicionar ao Orçamento</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div>
+                    <span class="tag">Cibersegurança</span>
+                    <h3>Hardening de Servidores & EDR/SIEM</h3>
+                    <p>Auditoria de Active Directory, implantação de sensores EDR e centralização de logs de segurança.</p>
+                </div>
+                <div>
+                    <div class="price">R$ 3.900,00</div>
+                    <button class="btn-buy" onclick="adicionarItem('Hardening & EDR/SIEM', 3900)">+ Adicionar ao Orçamento</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>NetCore Infra & Cloud Solutions © 2026 — Todos os direitos reservados.</p>
+        <p>Infraestrutura hospedada em Container Docker (Nginx) | Pipeline CI/CD gerenciado pelo Jenkins.</p>
+    </footer>
+
+    <script>
+        let carrinho = [];
+        function adicionarItem(nome, preco) {
+            carrinho.push({ nome, preco });
+            document.getElementById('cart-count').innerText = carrinho.length;
+            alert(`✅ "${nome}" adicionado à cotação!`);
+        }
+        function verCarrinho() {
+            if (carrinho.length === 0) {
+                alert("Sua cotação está vazia. Adicione equipamentos ou serviços!");
+                return;
+            }
+            let total = carrinho.reduce((acc, item) => acc + item.preco, 0);
+            let lista = carrinho.map(i => `• ${i.nome} - R$ ${i.preco.toLocaleString('pt-BR')}`).join('\n');
+            alert(`📋 RESUMO DO ORÇAMENTO:\n\n${lista}\n\n💰 Total Estimado: R$ ${total.toLocaleString('pt-BR')},00`);
+        }
+    </script>
+
 </body>
 </html>
